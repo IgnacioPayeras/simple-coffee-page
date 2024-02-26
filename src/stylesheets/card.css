@@ -1,0 +1,50 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.name-price-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.price-container {
+  background-color: #BEE3CC;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 0.675rem;
+  padding: 5px 5px;
+}
+
+.coffee-image {
+  border-radius: 20px;
+}
+
+.rating-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.sold-out-text {
+  color: #ED735D;
+}
+
+.rating-votes {
+  display: flex;
+}
+
+.votes {
+  color: #6F757C;
+}

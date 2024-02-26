@@ -1,0 +1,20 @@
+button {
+  color: white;
+  margin: 0 10px 30px 10px;
+}
+
+.all {
+  background-color: #6F757C;
+}
+
+.all:hover {
+  border: 1px solid white;
+}
+
+.available {
+  background-color: transparent;
+}
+
+.available:hover {
+  border: 1px solid white;
+}
