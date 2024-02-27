@@ -5,7 +5,11 @@ import "../stylesheets/cardContainer.css";
 
 const CardContainer = () => {
   const [coffeeData, setCoffeeData] = useState([]);
-  const [showAll, setShowAll] = useState(true);
+  const [buttonClicked, setButtonClicked] = useState(null);
+
+  const handleClick = (buttonName) => {
+    setButtonClicked(buttonName);
+  }
 
   useEffect(() => {
     fetch(
@@ -27,11 +31,23 @@ const CardContainer = () => {
         shipped fresh weekly.
       </p>
       <div>
-        <Button name="All products"/>
-        <Button name="Available Now"/>
+        <Button name="All products" onClick={() => handleClick("All products")}/>
+        <Button name="Available Now" onClick={() => handleClick("Available Now")}/>
       </div>
       <div className="cards-container">
         {coffeeData.map((coffee) => (
+          buttonClicked === "All products" ? 
+          (<Card
+            key={coffee.id}
+            name={coffee.name}
+            image={coffee.image}
+            price={coffee.price}
+            rating={coffee.rating}
+            votes={coffee.votes}
+            popular={coffee.popular}
+            available={coffee.available}
+          />) : 
+          (coffee.available ?  
           <Card
             key={coffee.id}
             name={coffee.name}
@@ -41,7 +57,7 @@ const CardContainer = () => {
             votes={coffee.votes}
             popular={coffee.popular}
             available={coffee.available}
-          />
+          /> : null)
         ))}
       </div>
     </div>

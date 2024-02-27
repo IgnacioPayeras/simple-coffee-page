@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import "../stylesheets/button.css";
 
 const Button = (props) => {
-  
   return (
-    <button className="all" >{props.name}</button>
+    <button onClick={props.onClick}>{props.name}</button>
   );
 };
 
